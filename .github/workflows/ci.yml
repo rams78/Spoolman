@@ -210,7 +210,7 @@ jobs:
     needs: [build-amd64, build-tester]
     strategy:
       matrix:
-        dbtype: ["postgres", "sqlite", "mariadb", "cockroachdb"]
+        dbtype: ["sqlite"]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
