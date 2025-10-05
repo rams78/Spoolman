@@ -32,6 +32,15 @@ jobs:
                const coredemo = require('@actions/core')
                return await coredemo.getIDToken()
            result-encoding: string
+      - name: Set up Python
+        uses: actions/setup-python@v5.2.0
+        with:
+          python-version: "3.9"
+    
+      - name: Export requirements
+        run: |
+          pip install pdm
+          pdm export -o requirements.txt --without-hashes
       - name: Install client dependencies
         run: |
           cd client
