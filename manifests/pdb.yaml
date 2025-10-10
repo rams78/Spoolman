@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: spoolman
+  labels:
+    app.kubernetes.io/name: spoolman
+    app.kubernetes.io/part-of: spoolman-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: spoolman
